@@ -9,7 +9,12 @@ typedef struct Queue{
 } Queue;
 
 void initialQueue(Queue** q){
-    *q = malloc(sizeof(Queue));
+    *q = (Queue*)malloc(sizeof(Queue));
+
+    for(int i = 0; i < MAX; i++){
+        (*q)->a[i] = -1;
+    }
+
     (*q)->front = -1;
     (*q)->rear = -1;
 }
@@ -51,7 +56,7 @@ void dequeue(Queue* q, int a){
 }
 
 void display(Queue* q){
-    if(isEmpty(q) == 1){
+    if(isEmpty(q)){
         printf("Empty Queue\n");
     }
     else{
@@ -69,13 +74,13 @@ void display(Queue* q){
 }
 
 int main(){
-    Queue** root;
-    initialQueue(root);
+    Queue* root;
+    initialQueue(&root);
 
     //enqueue(root, 1);
     //enqueue(root, 2);
 
-    display(*root);
+    display(root);
 
     return 1;
 }
