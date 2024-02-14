@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #define SIZE 100
 
 typedef struct EdgeNode{
@@ -40,10 +41,6 @@ void add_edge(Graph* g, int x, int y){
     g->degree[y]++;
 }
 
-void delete_edge(Graph* g, int x, int y){
-    g->vertices[i] = 
-}
-
 void display_graph(Graph* g){
     for(int i = 0; i < SIZE; i++){
         if(g->vertices[i]!=NULL){
@@ -58,7 +55,20 @@ void display_graph(Graph* g){
     }
 }
 
+int initialise_search(Graph* g){
+        int i;
+
+        for(i=1; i<=g->nvertices; i++){
+            processed[i] = discovered[i] = false;
+            parent[i] = -1;
+        }
+};
+
 void breath_first_search(Graph* g){
+    bool processed[SIZE+1];
+    bool discovered[SIZE+1];
+    int parent[SIZE+1];
+
     
 }
 

@@ -51,7 +51,7 @@ void enqueue(Queue* q, int a){
     }
 }
 
-void dequeue(Queue* q, int a){
+int dequeue(Queue* q){
     
 }
 
